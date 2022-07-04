@@ -24,7 +24,7 @@ const API_URL = 'https://v1.logs.api.u32e1.com/';
 class FrogArea {
 	private readonly fish: Fish;
 
-	constructor(private config: FrogConfig, private areaName: string | null) {
+	constructor(private config: FrogConfig, private areaName: string) {
 		this.fish = new Fish(config.secret);
 	}
 
