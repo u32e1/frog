@@ -71,7 +71,7 @@ test('different areas', () => {
 	expect(fetchSpy).toHaveBeenCalledWith(API_URL, {
 		method: 'post',
 		headers: {
-			'X-API-Key': 'abc',
+			'X-API-Key': API_KEY,
 		},
 		body: JSON.stringify({
 			area: 'test',
@@ -86,7 +86,7 @@ test('different areas', () => {
 	expect(fetchSpy).toHaveBeenCalledWith(API_URL, {
 		method: 'post',
 		headers: {
-			'X-API-Key': 'abc',
+			'X-API-Key': API_KEY,
 		},
 		body: JSON.stringify({
 			area: 'test2',
