@@ -19,7 +19,7 @@ enum LogType {
 	Error = 2,
 }
 
-const API_URL = 'https://v1.logs.api.u32e1.com/';
+const API_URL = 'https://27363.u32e1.com/';
 
 class FrogArea {
 	private readonly fish: Fish;
