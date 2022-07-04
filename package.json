@@ -5,10 +5,10 @@
 	"keywords": [
 		"CHANGE_ME"
 	],
-	"main": "src/index.js",
+	"main": "dist/index.js",
 	"scripts": {
 		"build": "tsc",
-		"test": "npm run build && vitest run"
+		"test": "vitest run"
 	},
 	"repository": {
 		"type": "git",
