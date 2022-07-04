@@ -23,5 +23,9 @@
 	"devDependencies": {
 		"typescript": "^4.7.4",
 		"vitest": "^0.17.0"
+	},
+	"dependencies": {
+		"@u32e1/fish": "^0.1.0",
+		"node-fetch": "^2.6.7"
 	}
 }
