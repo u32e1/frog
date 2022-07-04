@@ -1,9 +1,9 @@
 {
-	"name": "CHANGE_ME",
+	"name": "@u32e1/frog",
 	"version": "0.1.0",
-	"description": "CHANGE_ME",
+	"description": "The u32e1 SDK for Node.js.",
 	"keywords": [
-		"CHANGE_ME"
+		"u32e1"
 	],
 	"main": "dist/index.js",
 	"scripts": {
@@ -12,20 +12,20 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": ""
+		"url": "git+https://github.com/u32e1/frog.git"
 	},
-	"author": "",
+	"author": "u32e1",
 	"license": "GPLv3",
 	"bugs": {
-		"url": "CHANGE_ME.ME"
+		"url": "https://github.com/u32e1/frog/issues"
 	},
-	"homepage": "CHANGE_ME",
+	"homepage": "https://github.com/u32e1/frog#readme",
 	"devDependencies": {
 		"typescript": "^4.7.4",
 		"vitest": "^0.17.0"
 	},
 	"dependencies": {
-		"@u32e1/fish": "^0.1.0",
-		"node-fetch": "^2.6.7"
+		"@u32e1/fish": "0.1.0",
+		"node-fetch": "2.6.7"
 	}
 }
