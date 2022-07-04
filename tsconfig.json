@@ -2,7 +2,8 @@
 	"compilerOptions": {
 		"module": "commonjs",
 		"target": "es2019",
-		"skipLibCheck": true
+		"skipLibCheck": true,
+		"outDir": "dist/"
 	},
 	"include": ["src/**/*"],
 	"exclude": ["src/**/*.test.ts"]
