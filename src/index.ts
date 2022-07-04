@@ -13,13 +13,13 @@ export interface FrogConfig {
 	secret: string;
 }
 
-enum LogType {
+export enum LogType {
 	Info = 0,
 	Warning = 1,
 	Error = 2,
 }
 
-const API_URL = 'https://27363.u32e1.com/';
+export const API_URL = 'https://27363.u32e1.com/';
 
 class FrogArea {
 	private readonly fish: Fish;
@@ -68,6 +68,22 @@ class FrogArea {
 			area: this.areaName,
 			content: this.joinPieces(pieces),
 			type: LogType.Info,
+		});
+	}
+
+	public async warning(...pieces: unknown[]) {
+		return await this.send({
+			area: this.areaName,
+			content: this.joinPieces(pieces),
+			type: LogType.Warning,
+		});
+	}
+
+	public async error(...pieces: unknown[]) {
+		return await this.send({
+			area: this.areaName,
+			content: this.joinPieces(pieces),
+			type: LogType.Error,
 		});
 	}
 }
