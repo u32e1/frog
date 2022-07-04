@@ -106,6 +106,6 @@ export class Frog {
 	 * ```
 	 */
 	public Area = FrogArea.bind(this, this.config) as {
-		new (...args: [ConstructorParameters<typeof FrogArea>[1]]);
+		new (areaName: string): FrogArea;
 	};
 }
