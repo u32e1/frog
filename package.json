@@ -1,0 +1,27 @@
+{
+	"name": "CHANGE_ME",
+	"version": "0.1.0",
+	"description": "CHANGE_ME",
+	"keywords": [
+		"CHANGE_ME"
+	],
+	"main": "src/index.js",
+	"scripts": {
+		"build": "tsc",
+		"test": "npm run build && vitest run"
+	},
+	"repository": {
+		"type": "git",
+		"url": ""
+	},
+	"author": "",
+	"license": "GPLv3",
+	"bugs": {
+		"url": "CHANGE_ME.ME"
+	},
+	"homepage": "CHANGE_ME",
+	"devDependencies": {
+		"typescript": "^4.7.4",
+		"vitest": "^0.17.0"
+	}
+}
