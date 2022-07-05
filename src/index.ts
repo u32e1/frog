@@ -13,6 +13,10 @@ export interface FrogConfig {
 	secret: string;
 }
 
+interface FrogAreaConfig extends Pick<FrogConfig, 'apiKey'> {
+	fish: Fish;
+}
+
 export enum LogType {
 	Info = 0,
 	Warning = 1,
@@ -22,10 +26,12 @@ export enum LogType {
 export const API_URL = 'https://27363.u32e1.com/';
 
 class FrogArea {
-	private readonly fish: Fish;
+	private readonly config: FrogAreaConfig;
+	private readonly areaName: string;
 
-	constructor(private config: FrogConfig, private areaName: string) {
-		this.fish = new Fish(config.secret);
+	constructor(config: FrogAreaConfig, areaName: string) {
+		this.config = config;
+		this.areaName = areaName;
 	}
 
 	private joinPieces(pieces: unknown[]) {
@@ -52,7 +58,7 @@ class FrogArea {
 		content: string;
 		type: LogType;
 	}) {
-		const content = this.fish.encrypt(_content);
+		const content = this.config.fish.encrypt(_content);
 
 		await fetch(API_URL, {
 			method: 'post',
@@ -96,7 +102,8 @@ class FrogArea {
  * ```
  */
 export class Frog {
-	constructor(private config: FrogConfig) {}
+	private readonly config: FrogConfig;
+	private readonly fish: Fish;
 
 	/**
 	 * @example
@@ -105,7 +112,19 @@ export class Frog {
 	 * const log = new frog.Area('sign-up');
 	 * ```
 	 */
-	public Area = FrogArea.bind(this, this.config) as {
+	public Area: {
 		new (areaName: string): FrogArea;
 	};
+
+	constructor(config: FrogConfig) {
+		this.config = config;
+		this.fish = new Fish(config.secret);
+
+		this.Area = FrogArea.bind(this, {
+			fish: this.fish,
+			apiKey: this.config.apiKey,
+		}) as {
+			new (areaName: string): FrogArea;
+		};
+	}
 }
