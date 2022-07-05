@@ -38,6 +38,11 @@ class FrogArea {
 		const formattedPieces = [];
 
 		for (const piece of pieces) {
+			if (piece instanceof Error) {
+				formattedPieces.push(piece.message);
+				continue;
+			}
+
 			if (typeof piece === 'object') {
 				formattedPieces.push(JSON.stringify(piece));
 				continue;
